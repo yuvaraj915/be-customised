@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Template</title>
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
+  padding:30px;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.templates{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.template{
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.template:hover{
+  transform:scale(1.05);
+}
+
+.template img{
+  width:100%;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Select Your Design</h2>
+
+<div class="templates">
+
+  <div class="template"
+       onclick="selectTemplate('https://vkvinaykumarjourny.github.io/be_customized/be_customiselogo.jpeg')">
+    <img src="be_customiselogo.jpeg" alt="Template 1">
+  </div>
+
+  <div class="template"
+       onclick="selectTemplate('https://vkvinaykumarjourny.github.io/be_customized/template2.jpg')">
+    <img src="images/template2.jpg" alt="Template 2">
+  </div>
+
+  <div class="template"
+       onclick="selectTemplate('https://yourdomain.com/images/template3.jpg')">
+    <img src="images/template3.jpg" alt="Template 3">
+  </div>
+
+</div>
+
+<script>
+function selectTemplate(img){
+  window.location.href = "order.html?img=" + encodeURIComponent(img);
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+

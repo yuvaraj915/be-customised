@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order via WhatsApp</title>
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#f2f2f2;
+  padding:30px;
+}
+
+.container{
+  display:flex;
+  gap:30px;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+}
+
+.image-box, .form-box{
+  flex:1;
+}
+
+.image-box img{
+  width:100%;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+.form-box input,
+.form-box textarea,
+.form-box button{
+  width:100%;
+  padding:10px;
+  margin-bottom:12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.order-btn{
+  background:#25D366;
+  color:#fff;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.back-btn{
+  background:#000;
+  color:#fff;
+  border:none;
+  font-size:15px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Selected Image -->
+  <div class="image-box">
+    <img id="selectedImage" alt="Selected Template">
+  </div>
+
+  <!-- Order Form -->
+  <div class="form-box">
+    <h2>Place Order</h2>
+
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <textarea id="details" placeholder="Printing details"></textarea>
+
+    <button class="order-btn" onclick="sendWhatsApp()">Order via WhatsApp</button>
+
+    <!-- BACK TO HOME BUTTON -->
+    <button class="back-btn" onclick="goHome()">⬅ Back to Home</button>
+  </div>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const img = params.get("img");
+
+if(!img){
+  alert("Please select a template first");
+  window.location.href = "templates.html";
+}
+
+document.getElementById("selectedImage").src = img;
+
+function sendWhatsApp(){
+  const name = document.getElementById("name").value;
+  const mobile = document.getElementById("mobile").value;
+  const details = document.getElementById("details").value;
+
+  if(!name || !mobile){
+    alert("Please fill required fields");
+    return;
+  }
+
+  const message =
+`🖨️ New Printing Order
+👤 Name: ${name}
+📞 Mobile: ${mobile}
+📝 Details: ${details}
+
+🖼️ Selected Design:
+${img}`;
+
+  const phone = "8431452355"; // OWNER WHATSAPP NUMBER
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+function goHome(){
+  window.location.href = "templates.html";
+}
+</script>
+
+</body>
+</html>
+

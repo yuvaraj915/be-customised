@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+  font-family:'Poppins',sans-serif;
+  background:#faf7f5;
+  
+}
+
+.card{
+  background:#fff;
+  border:2px solid #f1e4dd;
+  border-radius:18px;
+  padding:20px;
+  max-width:420px;
+  margin:auto;
+}
+
+.card h2{
+  font-size:18px;
+  font-weight:500;
+}
+
+.subtitle{
+  font-size:13px;
+  color:#888;
+  margin-bottom:20px;
+}
+
+.row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.icon-box{
+  width:44px;
+  height:44px;
+  background:#fdeee7;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: lightseagreen;
+  font-size:18px;
+}
+
+.text h4{
+  font-size:14px;
+  margin:0;
+  font-weight:500;
+}
+
+.text p{
+  font-size:13px;
+  margin-top:2px;
+  color:#666;
+}
+
+a.row{
+  text-decoration:none;
+  color:inherit;
+}
+
+a.row:hover{
+  background:#fff6f1;
+  border-radius:12px;
+  padding:8px;
+}
+
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: lightseagreen;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  font-size:14px;
+  margin-top:6px;
+  cursor:pointer;
+}
+
+/* Business Hours */
+.hours{
+  background:#fff4ec;
+  border:2px solid #f1e4dd;
+  border-radius:18px;
+  padding:20px;
+  max-width:420px;
+  margin:20px auto;
+}
+
+.hours h3{
+  font-size:16px;
+  font-weight:500;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.time-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-top:8px;
+}
+
+header {
+  background: white;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-icons {
+  display: flex;
+  gap: 18px;
+}
+
+/* ================= SLIDE MENU ================= */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  height: 100vh;
+  width: 260px;
+  background: var(--card-bg);
+  padding-top: 80px;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+.menu.active { right: 0; }
+
+.menu a {
+  padding: 16px 24px;
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 22px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg-dark: #0f0f14;
+  --gold: #d4af37;
+  --card-bg: #1a1a22;
+  --text-light: #f5f5f5;
+}
+footer{
+  background:#fffaf6;
+  padding:40px 25px;
+  color:#6d5c54;
+}
+
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:40px;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.brand img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:1px solid #e3d5cc;
+}
+
+.brand h2{
+  margin:0;
+  font-weight:500;
+}
+
+.brand p{
+  margin:4px 0;
+  font-size:14px;
+}
+
+.highlight{
+  color:lightseagreen;
+}
+
+/* Section Titles */
+.footer-title{
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+/* Links */
+.footer-links a{
+  display:block;
+  text-decoration:none;
+  color:#6d5c54;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+.footer-links a:hover{
+  color:lightseagreen;
+}
+
+/* Admin */
+.admin{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+  font-size:15px;
+}
+
+/* Contact */
+.contact a{
+  display:block;
+  text-decoration:none;
+  color:#6d5c54;
+  margin-bottom:12px;
+  font-size:15px;
+}
+
+.contact a span{
+  color: lightseagreen;
+}
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+  <header>
+  <img src="be_customiselogo.jpeg" width="50">
+ <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'; color: black;">Be Customised <br><p style="color: lightseagreen; font-size: 15px">   </t> Be Unique • Be Creative<br></p><p style="font-size: 12px; color: #333;">Founded & Managed by Chiranthan MS</p></h1>
+  <div class="header-icons">
+    <a href="login.html"><img src="user.png" width="22"></a>
+    <span onclick="toggleMenu()"><img src="hamburger.png" width="28"></span>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <span class="close-btn" onclick="toggleMenu()">✖</span>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+  <a href="#">Digital works</a>
+  <a href="#">Gallery</a>
+  <a href="#">Portfolio/Our Works</a>
+</div>
+<body>
+<!-- Contact Information -->
+<div class="card">
+  <h2>Contact Information</h2>
+  <div class="subtitle">Reach out to us directly</div>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-regular fa-user"></i></div>
+    <div class="text">
+      <h4>Brand</h4>
+      <p>Be Customised</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-regular fa-user"></i></div>
+    <div class="text">
+      <h4>Admin</h4>
+      <p>Chiranthan MS</p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/919844709684" target="_blank" class="row">
+    <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+    <div class="text">
+      <h4>WhatsApp / Call</h4>
+      <p>+91 98447 09684</p>
+    </div>
+  </a>
+
+  <a href="tel:+919019195022" class="row">
+    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+    <div class="text">
+      <h4>Primary Contact</h4>
+      <p>+91 90191 95022</p>
+      <button class="call-btn">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </button>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a href="instagram://user?username=chiru_m_s"
+     onclick="setTimeout(()=>{window.location.href='https://www.instagram.com/chiru_m_s'},800);"
+     class="row">
+
+    <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
+    <div class="text">
+      <h4>Instagram</h4>
+      <p>@chiru_m_s</p>
+    </div>
+  </a>
+
+  <!-- Meesho -->
+  <a href="https://www.meesho.com/"
+     target="_blank"
+     class="row">
+
+    <div class="icon-box">
+      <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+    <div class="text">
+      <h4>Meesho Availability</h4>
+      <p>Shop on Meesho</p>
+    </div>
+  </a>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-solid fa-truck"></i></div>
+    <div class="text">
+      <h4>All India Delivery</h4>
+      <p>Nationwide shipping available</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+    <div class="text">
+      <h4>Service Area</h4>
+      <p>All Over India</p>
+    </div>
+  </div>
+</div>
+
+<!-- Business Hours -->
+<div class="hours">
+  <h3><i class="fa-regular fa-clock"></i> Business Hours</h3>
+
+  <div class="time-row">
+    <span>Monday - Friday</span>
+    <span>9:00 AM - 8:00 PM</span>
+  </div>
+
+  <div class="time-row">
+    <span>Saturday</span>
+    <span>10:00 AM - 6:00 PM</span>
+  </div>
+
+  <div class="time-row">
+    <span>Sunday</span>
+    <span>Closed</span>
+  </div>
+</div>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+<footer>
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div>
+      <div class="brand">
+        <img src="be_customiselogo.jpeg" alt="Be Customised">
+        <div>
+          <h2>Be.Customised</h2>
+          <p>Be Unique • Be Creative</p>
+        </div>
+      </div>
+
+      <p style="margin-top:15px;">Founded & Managed by Chiranthan MS</p>
+      <p class="highlight">All Over India</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="#">Gallery</a>
+        <a href="#">Products</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+      <div class="footer-title">Contact</div>
+
+      <a href="tel:+919019195022">
+        +91 90191 95022 <span>(Call)</span>
+      </a>
+
+      <a href="https://wa.me/919844709684" target="_blank">
+        +91 98447 09684 <span>(WhatsApp)</span>
+      </a>
+
+      <div class="social">
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://www.instagram.com/chiru_m_s" target="_blank">
+          @chiru_m_s
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</html>
+
